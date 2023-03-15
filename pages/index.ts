@@ -10,7 +10,7 @@ export function poligonosappWindow(map:any){
 const L = require("leaflet");
 
 // Write Javascript code!
-const appDiv = document.getElementById('app');
+const appDiv:any = document.getElementById('app');
 appDiv.innerHTML = `<div id="map"></div>`;
 
 // initialize the map on the "map" div with a given center and zoom
