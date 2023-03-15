@@ -1,11 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
-
-  var map: any;
-
-try{
+export function poligonosappWindow(){
 
 // Import stylesheets
 // import './style.css';
@@ -50,7 +46,31 @@ console.log('\n Home page index exception.');
 console.log('\n Home function finally.');
 
 }
-  
+
+} // end function
+
+export default function Home() {
+
+  var map: any;
+
+try{
+
+useEffect(
+  () => {
+     // https://blog.sethcorker.com/question/how-to-solve-referenceerror-next-js-window-is-not-defined/
+    window.navigator.geolocation.getCurrentPosition(
+      (newPos) => setPosition(newPos),
+      console.error
+    );
+
+    if (typeof window !== "undefined") {
+      // Client-side-only code
+      poligonosappWindow();
+    }
+  }
+    , []
+);
+
   return (
     <div className={styles.container}>
       <Head>
