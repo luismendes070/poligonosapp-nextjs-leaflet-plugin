@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export function poligonosappWindow(){
+export function poligonosappWindow(map:any){
 
 // Import stylesheets
 // import './style.css';
@@ -14,7 +14,7 @@ const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<div id="map"></div>`;
 
 // initialize the map on the "map" div with a given center and zoom
-map:any = L.map('map', {
+map = L.map('map', {
   center: [51.505, -0.09],
   zoom: 13
 });
@@ -66,7 +66,7 @@ useEffect(
 
     if (typeof window !== "undefined") {
       // Client-side-only code
-      poligonosappWindow();
+      poligonosappWindow(map);
     }
   }
     , []
@@ -83,7 +83,7 @@ useEffect(
           Welcome to <a href="https://nextjs.org"> @poligonosapp leafletJS plugin + Next.js!</a>
         </h1>
 
-        <p>{map}</p>
+        <p>{poligonosappWindow(map)}}</p>
 
         <p className={styles.description}>
           Get started by editing{' '}
