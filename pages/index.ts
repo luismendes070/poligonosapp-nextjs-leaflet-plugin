@@ -85,7 +85,7 @@ useEffect(
           Welcome to <a href="https://nextjs.org"> @poligonosapp leafletJS plugin + Next.js!</a>
         </h1>
 
-        <p>{poligonosappWindow(map)}</p>
+        <p className={styles.map}>{poligonosappWindow(map)}</p>
 
         <p className={styles.description}>
           Get started by editing{' '}
