@@ -2,7 +2,13 @@ import React, {useEffect} from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
+export function onMapClick(e:any) {
+  alert("You clicked the map at " + e.latlng);
+} // end onMapClick e function
+
 export function poligonosappWindow(map:any){
+
+  try{
 
 // Import stylesheets
 // import './style.css';
@@ -28,10 +34,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var latlngs = [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]];
 
 var polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
-
-function onMapClick(e) {
-  alert("You clicked the map at " + e.latlng);
-}
 
 map.on('click', onMapClick);
 
@@ -83,7 +85,7 @@ useEffect(
           Welcome to <a href="https://nextjs.org"> @poligonosapp leafletJS plugin + Next.js!</a>
         </h1>
 
-        <p>{poligonosappWindow(map)}}</p>
+        <p>{poligonosappWindow(map)}</p>
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -128,4 +130,8 @@ useEffect(
       </footer>
     </div>
   );
+}
+
+function setPosition(newPos: GeolocationPosition): void {
+throw new Error('Function not implemented.');
 }
