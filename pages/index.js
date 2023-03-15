@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
 
+try{
+
 // Import stylesheets
 // import './style.css';
 
@@ -36,6 +38,16 @@ map.on('click', onMapClick);
 
 // zoom the map to the polygon
 map.fitBounds(polygon.getBounds());
+
+}catch(error){
+
+console.log('\n Home page index exception.');
+
+}finally{
+
+console.log('\n Home function finally.');
+
+}
   
   return (
     <div className={styles.container}>
