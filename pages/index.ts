@@ -31,9 +31,9 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // create a red polygon from an array of LatLng points
-var latlngs = [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]];
+const latlngs = [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]];
 
-var polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
+const polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
 
 map.on('click', onMapClick);
 
@@ -54,7 +54,7 @@ console.log('\n Home function finally.');
 
 export default function Home() {
 
-  var map: any;
+  const map: any;
 
 try{
 
